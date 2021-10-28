@@ -5,9 +5,11 @@ It parses Power Query queries, their names, Power Query Editor groups, and some 
 
 ## How to use it
 1. Export an PBIX file as PBIT
-2. Modifiy the value of $filename line 322 to match with your PBIT
-3. Run the powershell and get your generated JSON 
-4. Import the JSON as Dataflow in Power BI Service
+2. Run the powershell and get your generated JSON 
+```sh
+.\pbit_to_json.ps1 <name_of_your_PBIT_file>
+```
+3. Import the JSON as Dataflow in Power BI Service
 
 ## Ideas / Fix
 Change $filename as run parameter
