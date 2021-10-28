@@ -165,7 +165,7 @@ function ParseQueriesFromPbit ($fileName) {
     }
 
     # ignore all queries containing the record #shared
-    $queriesAsArray = $queriesAsArray# | Where-Object { $_.queryBody -notlike "*#shared*" }
+    $queriesAsArray = $queriesAsArray
     
     return $queriesAsArray
 }
