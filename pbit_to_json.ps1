@@ -11,10 +11,10 @@
     .OUTPUTS
         JSON file with the name <PBIT original file name>.json
     .NOTES
-        Version:        1.1
-        Author:         Michal Dvorak (@nolockcz)
-        Creation Date:  07.02.2020
-        Purpose/Change: Fixed a bug with empty annotations
+        Version:        1.2
+        Author:         Clément De Figueiredo (@CaptainKali)
+        Creation Date:  28.10.2021
+        Purpose/Change: Rename variable
 #>
 
 function HasProperty($object, $propertyName) {
@@ -178,9 +178,9 @@ function ReplaceComments($str) {
             The PowerBI Dataflows don't support multiline comments and I need to replace them with one-line comments.
     #>
     $str = $str -replace "\r\n", "\r\n"
-    $matches = $str | Select-String -Pattern "\/\*(.*?)\*\/" -AllMatches | ForEach-Object { $_.matches } | ForEach-Object { $_.value }
+    $RegExpr = $str | Select-String -Pattern "\/\*(.*?)\*\/" -AllMatches | ForEach-Object { $_.matches } | ForEach-Object { $_.value }
 
-    foreach ($oldValue in $matches) {
+    foreach ($oldValue in $RegExpr) {
         $newValue = $oldValue.Replace("\r\n", "\r\n//")
         $str = $str.Replace($oldValue, $newValue)
     }
