@@ -319,7 +319,8 @@ function GenerateMigrationString($fileName) {
 }
 
 # name of the input PBIT file
-$fileName = "testz.pbit"
+$fileName=$args[0]
+
 # name of the output JSON file
 $jsonOutputFileName = $fileName + ".json"
 
