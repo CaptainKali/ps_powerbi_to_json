@@ -11,7 +11,4 @@ It parses Power Query queries, their names, Power Query Editor groups, and some 
 ```
 3. Import the JSON as Dataflow in Power BI Service
 
-## Ideas / Fix
-Change $filename as run parameter
-
 Credits to Michal Dvorak (@nolockcz) for original idea
